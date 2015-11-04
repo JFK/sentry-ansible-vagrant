@@ -1,0 +1,7 @@
+- name: install redis redhat/centos
+  yum: name=redis
+  when: ansible_os_family == "RedHat"
+
+- name: install redis debian/ubuntu
+  apt: pkg=redis-server state=latest
+  when: ansible_os_family == "Debian"
