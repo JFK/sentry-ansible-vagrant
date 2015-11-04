@@ -31,7 +31,7 @@
 # Shell executable needs to be changed because Ubuntu uses /bin/dash when invoking /bin/sh, which doesn't support source. 
 # see http://stackoverflow.com/questions/13702425/source-command-not-found-in-sh-shell
 - name: sentry upgrade
-  action: shell source ve/bin/activate && sentry --config=sentry_conf.py upgrade executable=/bin/bash chdir=/var/sentry
+  action: shell source ve/bin/activate && sentry --config=sentry_conf.py upgrade --noinput executable=/bin/bash chdir=/var/sentry
   notify:
     - restart nginx
     - reload supervisor

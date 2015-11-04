@@ -1,6 +1,22 @@
-[program:sentry]
-command=/var/sentry/ve/bin/sentry --config=/var/sentry/sentry_conf.py start http
-environment=PATH="/var/sentry/ve/bin"
+[program:sentry-http]
+environment=SENTRY_CONF="/var/sentry/sentry_conf.py"
+command=/var/sentry/ve/bin/sentry start http
 autostart=true
 autorestart=true
 redirect_stderr=true
+stdout_logfile=syslog
+stderr_logfile=syslog
+stopsignal=TERM
+user=root
+
+[program:sentry-worker]
+directory=/var/sentry/ve/
+environment=SENTRY_CONF="/var/sentry/sentry_conf.py",C_FORCE_ROOT="true"
+command=/var/sentry/ve/bin/sentry celery worker -B
+autostart=true
+autorestart=true
+redirect_stderr=true
+stdout_logfile=syslog
+stderr_logfile=syslog
+stopsignal=TERM
+user=root

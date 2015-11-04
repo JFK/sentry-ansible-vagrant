@@ -26,16 +26,16 @@ $ vagrant up
 In order to properly access Sentry by its configured hostname (`sentry.server` in the sentry.yml), you have to add this hostname to your hostsfile. On POSIX systems (Linx & OS X), you can add it by doing:
 
 ```
-$ sudo echo "<servername> 192.168.33.10" >> /etc/hosts
+$ echo "192.168.33.10 <servername>" | sudo tee -a /etc/hosts
 ```
 
 ## Different OSes
 
-By default, the Vagrant box runs Ubuntu 12.04, but the playbook supports Debian 7 and CentOS 6.4 as well! To try those out, uncomment the appropriate lines in the Vagrantfile and comment out the Debian lines.
+By default, the Vagrant box runs Debian 8, but the playbook supports Ubuntu 12.04 and CentOS 6.4 as well! To try those out, uncomment the appropriate lines in the Vagrantfile and comment out the Debian lines.
 
 ## Using the playbook standalone
 
-You can of course also use the playbook without Vagrant. In that case you must provide your own inventory file specifying the host on which to install Sentry. The playbook has been tested on Ubuntu 12.04, Debian 7 and CentOS 6.4. Other flavors of Linux might work as well.
+You can of course also use the playbook without Vagrant. In that case you must provide your own inventory file specifying the host on which to install Sentry. The playbook has been tested on Debian 8, Ubuntu 12.04 and CentOS 6.4. Other flavors of Linux might work as well.
 
 ## Secret key
 

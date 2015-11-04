@@ -7,9 +7,10 @@
       password: sentry
     superuser_sentry:
       username: admin
-      email: admin@example.com
+      email: admin@sentry.local
       password: admin
     sentry:
+      admin_email: 'root@sentry.local'
       server: sentry.local
       url: http://sentry.local
       secret_key: 'my69eAMYjzqtmfaRJ107MeXCYDTaxQdNZPr8YOf/zOV5pIUoZa5biA=='
@@ -19,6 +20,7 @@
     - supervisor
     - role: nginx
       nginx_sites: none
+    - redis
     - postgres
     - sentry
 

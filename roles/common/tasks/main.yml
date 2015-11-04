@@ -18,6 +18,10 @@
   apt: pkg={{ item }} state=latest
   with_items:
     - build-essential
+    - libxslt1-dev
+    - libxml2-dev
+    - libffi-dev
+    - libssl-dev
   when: ansible_os_family == "Debian"
 
 # @development is a groupinstall, see https://coderwall.com/p/k6goya
