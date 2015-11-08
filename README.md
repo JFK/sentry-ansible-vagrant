@@ -26,7 +26,7 @@ $ vagrant up
 In order to properly access Sentry by its configured hostname (`sentry.server` in the sentry.yml), you have to add this hostname to your hostsfile. On POSIX systems (Linx & OS X), you can add it by doing:
 
 ```
-$ echo "192.168.33.10 <servername>" | sudo tee -a /etc/hosts
+$ echo "192.168.33.10 sentry.local" | sudo tee -a /etc/hosts
 ```
 
 ## Different OSes
