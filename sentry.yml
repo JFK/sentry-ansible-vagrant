@@ -1,6 +1,8 @@
 - hosts: all
   sudo: True
   vars:
+    timezone: Asia/Tokyo
+    lang: ja_JP.UTF-8
     db_sentry:
       name: sentry
       user: sentry
@@ -17,6 +19,7 @@
   roles:
     - common
     - python
+    - ntp
     - supervisor
     - role: nginx
       nginx_sites: none

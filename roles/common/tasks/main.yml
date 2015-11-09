@@ -1,3 +1,7 @@
+- name: update locale lang
+  locale_gen: name={{ lang }} state=present
+  when: ansible_os_family == "Debian"
+
 - name: update apt package cache
   apt: update_cache=yes
   when: ansible_os_family == "Debian"
