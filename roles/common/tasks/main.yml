@@ -24,6 +24,7 @@
     - build-essential
     - libxslt1-dev
     - libxml2-dev
+    - zlib1g-dev
     - libffi-dev
     - libssl-dev
   when: ansible_os_family == "Debian"
